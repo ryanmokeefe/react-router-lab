@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Stocks from './Stocks.js'
 import About from './About.js'
+import StockDetail from './StockDetail'
 import {Route, Link} from 'react-router-dom'
 
 class App extends Component {
@@ -23,6 +24,11 @@ class App extends Component {
             <Route path='/about' component={
               () => (
                 <About />
+              )
+            } />
+            <Route path='/stocks/:symbol' component={
+              () => (
+                <StockDetail />
               )
             } />
           </div>

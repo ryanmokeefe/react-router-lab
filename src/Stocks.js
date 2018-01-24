@@ -23,11 +23,12 @@ class Stocks extends Component {
 
         let stocks = this.state.stocks.map((stock, index) => {
             return (
-            <div key={index}>
+            <div className="stockBox" key={index}>
+              <a href="{stock.symbol}">
                 <div> {stock.symbol} </div>
                 <h3>{stock.name} </h3>
                 <p>{stock.open}</p>
-
+              </a>
             </div>
         )})
         return (
