@@ -14,19 +14,19 @@ class Stocks extends Component {
     }
 
     render() {
-        let stocks = this.props.stocks.map((stock, index) => {
-            return (
-            <div key={index}>
-                <img src={stock.img} alt={stock.name} />
-                <h3>{stock.name} </h3>
-                <p>{stock.open}</p>
+        // let stocks = this.props.stocks.map((stock, index) => {
+        //     return (
+        //     <div key={index}>
+        //         <img src={stock.img} alt={stock.name} />
+        //         <h3>{stock.name} </h3>
+        //         <p>{stock.open}</p>
 
-            </div>
-        )})
+        //     </div>
+        // )})
         return (
             <div>
                 <div>stock list</div>
-                {stocks}
+                {/* {stocks} */}
             </div>
         )
     }

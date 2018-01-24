@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Stocks from './Stocks.js'
-import About from './About'
-import {Route, Link, Redirect, Switch} from 'react-router-dom'
-
+import About from './About.js'
+import {Route, Link} from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -15,18 +14,18 @@ class App extends Component {
             <Link to="/about">About </Link>
           </nav>
           <main>
-          <Switch>
-            <Route path='/stocks' render={
+          <div>
+            <Route path='/stocks' component={
               () => (
                 <Stocks />
               )
             } />
-            <Route path='/about' render={
+            <Route path='/about' component={
               () => (
                 <About />
               )
             } />
-          </Switch>
+          </div>
           </main>
 
 
