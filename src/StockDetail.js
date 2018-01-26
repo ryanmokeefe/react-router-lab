@@ -3,18 +3,28 @@ import React, {Component} from 'react';
 
 
 class StockDetail extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            stocks: this.props.stocks
+        }
+    }
+
+
     render () {
+        let stock = this.props.stocks.find((e)=> { return e.symbol === this.props.match.params.symbol })
+
+
         return (
             <div>
-                <h2>{this.state.stock.name}</h2>
-                <h3>{this.state.stock.symbol}</h3>
-                <p>{this.state.stock.lastPrice}</p>
-                <p>{this.state.stock.change}</p>
-                <p>{this.state.stock.high}</p>
-                <p>{this.state.stock.low}</p>
-                <p>{this.state.stock.open}</p>
-
-
+                <p>hello world</p>
+                <h2>{stock.name}</h2> 
+                <h3>{stock.symbol}</h3>
+                <p>{stock.lastPrice}</p>
+                <p>{stock.change}</p>
+                <p>{stock.high}</p>
+                <p>{stock.low}</p>
+                <p>{stock.open}</p>
 
             </div>
         )

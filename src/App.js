@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import Stocks from './Stocks.js'
-import About from './About.js'
-import StockDetail from './StockDetail'
-import {Route, Link} from 'react-router-dom'
+import Stocks from './Stocks.js';
+import About from './About.js';
+import StockDetail from './StockDetail';
+import {Route, Link} from 'react-router-dom';
+import stockData from '../data/stock-data.json';
+
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      stocks: []
+
+    }
+}
+
   render() {
     return (
         <div>
@@ -16,19 +26,19 @@ class App extends Component {
           </nav>
           <main>
           <div>
-            <Route path='/stocks' component={
+            <Route path="/stocks" component={
               () => (
-                <Stocks />
+                <Stocks stocks={stockData}/>
               )
             } />
-            <Route path='/about' component={
+            <Route path="/about" component={
               () => (
                 <About />
               )
             } />
-            <Route path='/stocks/:symbol' component={
-              () => (
-                <StockDetail />
+            <Route path="/:symbol" render={
+              (props) => (
+                <StockDetail {...props} stocks={stockData}/>
               )
             } />
           </div>
